@@ -307,20 +307,33 @@ span.text-red {
 .cart-wrapper {
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
+
+  backdrop-filter: blur(5px); /* تطبيق تأثير التمويه */
+  -webkit-backdrop-filter: blur(5px); /* دعم Safari */
+  padding: 20px;
+  border-radius: 10px;
+
+
   position: fixed;
   right: 0;
   top: 0;
   z-index: 100;
   /* will-change: transform; */
   transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
 
 }
 
 .cart-container {
-  height: 100vh;
+  height: 70vh;
   width: 600px;
   background-color: white;
-  float: right;
+  border-radius: 10px;
+  float:none;
   padding: 40px 10px;
   position: relative;
 
@@ -729,7 +742,7 @@ span.text-red {
     margin-top: 80px;
   }
 
-  /* .footer-banner-image{
+  .footer-banner-image{
     position: absolute;
     width: 77%;
     left: 30%;
@@ -737,7 +750,10 @@ span.text-red {
     height: 50%;
     width: 350;
      height:500;
-    } */
+    }
+    .checkout-container{
+      flex-direction: column;
+    }
 
 }
 
