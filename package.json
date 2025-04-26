@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@sanity/client": "^3.2.0",
@@ -36,4 +37,5 @@
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0"
   }
+
 }
