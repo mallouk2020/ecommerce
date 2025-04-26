@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { AiOutlineShopping, AiOutlineMail } from 'react-icons/ai';
 import { FaWhatsapp } from 'react-icons/fa';
-import Cart from './Cart';
+import Cart from './cart';
 import { useStateContext } from '../context/StateContext';
 
 const Navbar = () => {
