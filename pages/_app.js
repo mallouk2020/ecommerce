@@ -1,4 +1,6 @@
 import "../styles/globals.css"; // حسب بنية المجلدات
+import '../styles/payment.css';
+
 import React from "react";
 import { Toaster } from "react-hot-toast";
 // import {Google0AuthProvider} from '@react-oauth/google';

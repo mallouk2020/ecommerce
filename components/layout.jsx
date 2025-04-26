@@ -9,8 +9,12 @@ const Layout = ({ children }) => {
     <div className="layout">
       <Head>
         <title>mk Store</title>
-      </Head>
-      <header>
+      </Head >
+      <header style={{display :"flex",
+        justifyContent:'center',
+        alignItems:"center",
+        margin:"15px"
+      }} >
         <Navbar />
       </header>
       <main className="main-container">

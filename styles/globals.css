@@ -22,18 +22,13 @@ a {
   max-width: 1400px;
   margin: auto;
   width: 100%;
+  margin-top: 50px;
 
 }
 
 .layout {
   padding: 10px;
-}
-
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 6px 18px;
-  position: relative;
+  
 }
 
 .marquee-text {
@@ -152,7 +147,7 @@ span.text-red {
 .hero-banner-container {
   padding: 100px 40px;
   background-color: #dcdcdc;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   position: relative;
   height: 500px;
   line-height: 0.9;
@@ -312,8 +307,6 @@ span.text-red {
   -webkit-backdrop-filter: blur(5px); /* دعم Safari */
   padding: 20px;
   border-radius: 10px;
-
-
   position: fixed;
   right: 0;
   top: 0;
@@ -329,9 +322,9 @@ span.text-red {
 }
 
 .cart-container {
-  height: 70vh;
-  width: 600px;
-  background-color: white;
+  height: 80vh;
+  width: 700px;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   float:none;
   padding: 40px 10px;
@@ -395,9 +388,11 @@ span.text-red {
 }
 
 .product-container {
+  background-color: #e8eaec;
   margin-top: 15px;
+  /* margin-bottom: 10px; */
   overflow: auto;
-  max-height: 70vh;
+  max-height: 54%;
   padding: 20px 10px;
 }
 
@@ -453,12 +448,14 @@ span.text-red {
 }
 
 .cart-bottom {
-  position: absolute;
-  bottom: 12px;
-  right: 5px;
+  background:#ffffff;
+  position: absolute ;
+  bottom: 0px;
+  right: 0%;
   width: 100%;
-  padding: 30px 65px;
-
+  height: 25%;
+  /* padding: 30px 65px; */
+border-radius: 10px;
 }
 
 .btn-container {
@@ -473,10 +470,10 @@ span.text-red {
   border-radius: 15px;
   border: none;
   font-size: 20px;
-  margin-top: 10px;
-  margin-top: 40px;
+  margin-top: 13px;
+  
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #020101;
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
@@ -729,13 +726,19 @@ span.text-red {
   .hero-banner-container {
     height: 560px;
   }
+  .layout{
+    padding: 0px;
+
+  }
+
 
   .hero-banner-image {
-    width: 77%;
+    width: 70%;
     height: 62%;
     top: -2%;
-    right: -6%;
+    right: 1%;
   }
+ 
 
   .footer-banner-container {
     height: 560px;
@@ -744,7 +747,7 @@ span.text-red {
 
   .footer-banner-image{
     position: absolute;
-    width: 77%;
+    width: 66%;
     left: 30%;
     top: 6%;
     height: 50%;
@@ -815,7 +818,7 @@ span.text-red {
 }
 
 .cart-container {
-  width: 415px;
+  width: 515px;
   padding: 4px;
 }
 
@@ -825,6 +828,8 @@ span.text-red {
 
 .product-container {
   margin-top: 10px;
+  padding-bottom: 30%;
+  
 }
 
 .product {
@@ -875,7 +880,7 @@ span.text-red {
 }
 
 .cart-bottom {
-  padding: 30px;
+  padding: 20px;
 }
 
 .total h3 {
@@ -1017,4 +1022,105 @@ span.text-red {
   color: #2e7d32;
   font-size: 22px;
   margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* nnnnnnnnnnnnnnnn */
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-bottom:6%;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-btn {
+  color: #555;
+  transition: color 0.3s;
+}
+
+.contact-btn:hover {
+  color: #222;
+}
+
+.contact-btn.whatsapp:hover {
+  color: #25D366;
+}
+
+.cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.cart-btn:hover {
+  color: #222;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+  
+  .logo-text {
+    font-size: 1.3rem;
+  }
+  
+  .nav-icons {
+    gap: 1rem;
+  }
 }
