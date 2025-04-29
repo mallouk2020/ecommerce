@@ -2,6 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+// import sittings from './schemaTypes/sittings'
 // import { myStructure } from './deskStructure'
 
 export default defineConfig({
@@ -36,7 +37,7 @@ export default defineConfig({
             ),
           ...S.documentTypeListItems().filter(
             (listItem) =>
-              !['product', 'banner', 'order'].includes(
+              !['product', 'banner', 'order', 'sittings'].includes(
                 listItem.getId()
               )
           ),
@@ -46,4 +47,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+  
 })

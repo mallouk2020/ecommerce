@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { toast } from 'react-hot-toast';
+import { client } from '../lib/client';
+
+
+
+
 
 const Context = createContext();
 
@@ -9,10 +14,43 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-
-
-
+  const [selectedStyle, setSelectedStyle] = useState(2); // يمكن تغييرها حسب الحاجة
   
+
+  const [loading, setLoading] = useState(true);
+
+
+  useEffect(() => {
+    const fetchStyle = async () => {
+      try {
+        const query = `*[_type == "styleSettings"][0]`;
+        const styleSettings = await client.fetch(query);
+        if (styleSettings?.selectedStyle) {
+          setSelectedStyle(styleSettings.selectedStyle);
+        }
+      } catch (error) {
+        console.error('Failed to fetch style settings:', error);
+      } finally {
+        setLoading(false);
+      }
+    };   
+     fetchStyle();
+  }, []);
+
+  const updateStyleSetting = async (newStyle) => {
+    try {
+      const doc = {
+        _type: 'styleSettings',
+        _id: 'styleSettings', // استخدام نفس الـ ID دائمًا
+        selectedStyle: newStyle
+      };
+
+      await client.createOrReplace(doc);
+      setSelectedStyle(newStyle);
+    } catch (error) {
+      console.error('Failed to update style:', error);
+    }
+  };
   
 
 
@@ -132,6 +170,8 @@ let foundProduct;
         totalPrice,
         totalQuantities,
         qty,
+        selectedStyle,
+        setSelectedStyle,
         incQty,
         decQty,
         onAdd,
@@ -139,7 +179,10 @@ let foundProduct;
         onRemove,
         setCartItems,
         setTotalPrice,
-        setTotalQuantities
+        setTotalQuantities,
+        selectedStyle,
+        setSelectedStyle: updateStyleSetting, // استخدام الدالة المعدلة
+        loading
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { client } from '../lib/client';
-import { Footerbanner, HeroBanner, Product } from '../components'; // تصحيح اسم المجلد
+import { Footerbanner, HeroBanner, Product } from '../components'; 
 
 const Home = ({ products, banner  }) => {
   return (
