@@ -388,7 +388,7 @@ span.text-red {
 }
 
 .product-container {
-  background-color: #e8eaec;
+  background-color: hsl(136, 76%, 95%);
   margin-top: 15px;
   /* margin-bottom: 10px; */
   overflow: auto;
